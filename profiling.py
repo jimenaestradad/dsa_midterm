@@ -1,4 +1,4 @@
-import time
+'''import time
 from memory_profiler import profile
 from ll import LinkedList, Node
 from songs import SONGS
@@ -28,3 +28,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    '''
