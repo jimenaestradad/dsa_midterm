@@ -1,6 +1,6 @@
 class Node:
-    def __init__(self, data: any):
-        self.data = data
+    def __init__(self, title: str, artist: str, album: str):
+        self.data = {"title": title, "artist": artist, "album": album}
         self.next = None
         self.prev = None
 
@@ -15,7 +15,7 @@ class LinkedList:
     def __repr__(self):
         nodes = ['START']
         for node in self:
-            nodes.append(node.data)
+            nodes.append(node.data["title"])
         nodes.append('NIL')
         return '\n' + ' --> '.join(nodes)
 
@@ -63,7 +63,7 @@ class LinkedList:
         current = self.start
 
         while current is not None:
-            if current.data == node_reference:
+            if current.data["title"] == node_reference:
                 element.next = current.next
                 element.prev = current
 
@@ -79,7 +79,7 @@ class LinkedList:
         if self.start is None:
             return
 
-        if self.start.data == element_data:
+        if self.start.data["title"] == element_data:
             self.start = self.start.next
 
             if self.start is not None:
@@ -90,7 +90,7 @@ class LinkedList:
         current = self.start.next
 
         while current is not None:
-            if current.data == element_data:
+            if current.data["title"] == element_data:
                 if current.prev is not None:
                     current.prev.next = current.next
 
@@ -105,7 +105,7 @@ class LinkedList:
         current = self.start
 
         while current is not None:
-            if current.data == element_data:
+            if current.data["title"] == element_data:
                 return current
 
             current = current.next
